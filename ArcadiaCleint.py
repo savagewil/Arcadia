@@ -32,7 +32,7 @@ while not Done:
             Done = True
         elif not output[1] is None:
             Currentpage = output[1]
-    if count % 10 == 0:
+    if count % 2 == 0:
         Currentpage.display(Screen)
     mouse.display(Screen)
     pygame.display.flip()
