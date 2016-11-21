@@ -18,7 +18,8 @@ def Backspace(string):
 
 
 class Label(Component.Component):
-    def __init__(self, loc, height, text, colors, **kwargs): #textsize=0, font="font/BebasNeue Bold.otf", background=False
+    def __init__(self, loc, height, text, colors,
+                 **kwargs):  # textsize=0, font="font/BebasNeue Bold.otf", background=False
         self.visible = True
         self.loc = self.x, self.y = loc
         self.text = text
@@ -28,6 +29,11 @@ class Label(Component.Component):
         self.clicked = False
         self.hover = False
         self.count = 0
+
+        if "function" in kwargs:
+            self.function = kwargs["function"]
+        else:
+            self.function = None
 
         if "textsize" in kwargs:
             self.textsize = kwargs["textsize"]
@@ -44,12 +50,12 @@ class Label(Component.Component):
         else:
             pass
 
-        #print text
+        # print text
 
         if "backWidth" in kwargs:
             self.width = kwargs["backWidth"]
         else:
-            self.width = int(len(text) * float(height) * 3.0/ 8.0)
+            self.width = int(len(text) * float(height) * 3.0 / 8.0)
 
         if "backLength_Width" in kwargs:
             self.backLength_Width = kwargs["backLength_Width"]
@@ -60,10 +66,6 @@ class Label(Component.Component):
             self.font = kwargs["font"]
         else:
             self.font = "font/BebasNeue Bold.otf"
-
-
-
-
 
         self.rect = pygame.Rect(loc, self.backLength_Width)
 
@@ -80,29 +82,34 @@ class Label(Component.Component):
                     self.clicked = False
                 else:
                     self.count += 1
-        return [self.clicked, None]
+        if self.clicked and isinstance(self.function, type("")):
+            return [True, self.function]
+        elif self.clicked and self.function is not None:
+            return [True, self.function()]
+        else:
+            return [self.clicked, None]
 
-#    def EventHandle(self,Events):
-#        if self.clicked:
-#            for event in Events:
-#                if event.type == pygame.KEYUP:
-#                    if event.key == pygame.K_LCTRL or event.key == pygame.K_RCTRL:
-#                        self.control = False
-#                    elif event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
-#                        self.shift = False
-#                if event.type == pygame.KEYDOWN:
-#                    print event.type,event.key,"("+event.unicode+")"
-#                    if event.key == pygame.K_BACKSPACE:
-#                        self.text = Backspace(self.text)
-#                    elif event.key == pygame.K_RETURN:
-#                        self.clicked = False
-#                        self.done = True
-#                    elif event.key == 9:
-#                        self.text += "     "
-#                    elif event.key == pygame.K_LCTRL or event.key == pygame.K_RCTRL:
-#                        self.control = True
-#                    else:
-#                        self.text += event.unicode
+    #    def EventHandle(self,Events):
+    #        if self.clicked:
+    #            for event in Events:
+    #                if event.type == pygame.KEYUP:
+    #                    if event.key == pygame.K_LCTRL or event.key == pygame.K_RCTRL:
+    #                        self.control = False
+    #                    elif event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+    #                        self.shift = False
+    #                if event.type == pygame.KEYDOWN:
+    #                    print event.type,event.key,"("+event.unicode+")"
+    #                    if event.key == pygame.K_BACKSPACE:
+    #                        self.text = Backspace(self.text)
+    #                    elif event.key == pygame.K_RETURN:
+    #                        self.clicked = False
+    #                        self.done = True
+    #                    elif event.key == 9:
+    #                        self.text += "     "
+    #                    elif event.key == pygame.K_LCTRL or event.key == pygame.K_RCTRL:
+    #                        self.control = True
+    #                    else:
+    #                        self.text += event.unicode
 
     def display(self, surface):
         if self.visible:
