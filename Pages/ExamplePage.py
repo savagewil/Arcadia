@@ -15,6 +15,6 @@ class ExamplePage(Page.Page):
             Components.Button.Button([20, 140], 200, 50, "Example", ["blue", "green"]),
             Components.Label.Label([20, 200], 50, "Some Stuff", ["black", "red"], background=True),
             Components.Button.Button([240, 140], 100, 50, "Back", ["blue", "green"], function=Pages.MainPage.MainPage),
-            Components.Button.Button([240, 200], 100, 50, "Exit", ["blue", "green"], function="x")
-
+            Components.Button.Button([240, 200], 100, 50, "Exit", ["blue", "green"], function="x"),
+            Components.Hyperlink.Hyperlink([460, 20], 50, "Example", ["red", "red"])
         ]
