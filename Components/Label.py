@@ -30,15 +30,19 @@ class Label(Component.Component):
         self.hover = False
         self.count = 0
 
+        if "font" in kwargs:
+            self.font = kwargs["font"]
+        else:
+            self.font = "font/BebasNeue Bold.otf"
+
+        font = pygame.font.Font(self.font, self.height)
+
+        w, h = font.size(self.text)
+
         if "function" in kwargs:
             self.function = kwargs["function"]
         else:
             self.function = None
-
-        if "textsize" in kwargs:
-            self.textsize = kwargs["textsize"]
-        else:
-            self.textsize = height
 
         if "background" in kwargs:
             self.background = kwargs["background"]
@@ -46,28 +50,21 @@ class Label(Component.Component):
             self.background = False
 
         if "backLocation" in kwargs:
-            loc = kwargs["BackLocation"]
+            self.Backloc = kwargs["BackLocation"]
         else:
-            pass
+            self.Backloc = (loc[0] - 5, loc[1] - 5)
 
         # print text
 
         if "backWidth" in kwargs:
             self.width = kwargs["backWidth"]
         else:
-            self.width = int(len(text) * float(height) * 3.0 / 8.0)
+            self.width = w + 10
 
         if "backLength_Width" in kwargs:
             self.backLength_Width = kwargs["backLength_Width"]
         else:
-            self.backLength_Width = [self.width, self.height]
-
-        if "font" in kwargs:
-            self.font = kwargs["font"]
-        else:
-            self.font = "font/BebasNeue Bold.otf"
-
-        self.rect = pygame.Rect(loc, self.backLength_Width)
+            self.backLength_Width = [w + 10, h + 5]
 
     def check(self, mouse):
         x, y = mouse.x, mouse.y
@@ -116,7 +113,6 @@ class Label(Component.Component):
             #            print ":P"
             color2 = self.colors[1]
             color = self.colors[0]
-            text_ = self.text
             if self.background:
                 c1 = 255
                 c2 = 255
@@ -128,8 +124,8 @@ class Label(Component.Component):
                 elif not color[2] > 235:
                     c3 = color[2] + 20
                 color_ = c1, c2, c3, 255
-                rect = pygame.Rect(self.loc, self.backLength_Width)
+                rect = pygame.Rect(self.Backloc, self.backLength_Width)
                 pygame.draw.rect(surface, color, rect)
-            font = pygame.font.Font(self.font, self.textsize)
-            text = font.render(text_, 1, color2)
+            font = pygame.font.Font(self.font, self.height)
+            text = font.render(self.text, 1, color2)
             surface.blit(text, self.loc)
