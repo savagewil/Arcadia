@@ -31,11 +31,9 @@ class PictureHolder(Component.Component):
         elif self.back:
             self.border = 5
 
-    def display(self,screen):
+    def display(self, screen):
         pass
 
-    def check(self, mouse):
-        pass
 
 
 

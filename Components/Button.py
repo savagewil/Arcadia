@@ -56,22 +56,22 @@ class Button:
         else:
             self.textHeight = self.height - 8
 
-    def check(self, mouse):
-        x, y = mouse.x, mouse.y
-        if self.x < x < self.x + self.width and self.y < y < self.y + self.height:
-            self.hover = True
-            if mouse.clicked:
-                self.clicked = True
-                if self.function == "x" or self.function is None:
-                    return [True, self.function]
-                else:
-                    return [True, self.function()]
-            else:
-                return [False, None]
-        else:
-            self.hover = False
-            self.clicked = False
-            return [False, None]
+    # def check(self, mouse):
+    #     x, y = mouse.x, mouse.y
+    #     if self.x < x < self.x + self.width and self.y < y < self.y + self.height:
+    #         self.hover = True
+    #         if mouse.clicked:
+    #             self.clicked = True
+    #             if self.function == "x" or self.function is None:
+    #                 return [True, self.function]
+    #             else:
+    #                 return [True, self.function()]
+    #         else:
+    #             return [False, None]
+    #     else:
+    #         self.hover = False
+    #         self.clicked = False
+    #         return [False, None]
 
     def display(self, surface):
         color = self.colors[0]

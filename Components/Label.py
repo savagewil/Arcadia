@@ -66,25 +66,27 @@ class Label(Component.Component):
         else:
             self.backLength_Width = [w + 10, h + 5]
 
-    def check(self, mouse):
-        x, y = mouse.x, mouse.y
-        if self.x < x < self.x + self.width and self.y < y < self.y + self.height:
-            self.hover = True
-            if mouse.clicked:
-                self.clicked = True
-        else:
-            if mouse.clicked:
-                if not self.count == 0:
-                    self.hover = False
-                    self.clicked = False
-                else:
-                    self.count += 1
-        if self.clicked and isinstance(self.function, type("")):
-            return [True, self.function]
-        elif self.clicked and self.function is not None:
-            return [True, self.function()]
-        else:
-            return [self.clicked, None]
+        self.rect = pygame.Rect(self.Backloc, self.backLength_Width)
+
+    # def check(self, mouse):
+    #     x, y = mouse.x, mouse.y
+    #     if self.x < x < self.x + self.width and self.y < y < self.y + self.height:
+    #         self.hover = True
+    #         if mouse.clicked:
+    #             self.clicked = True
+    #     else:
+    #         if mouse.clicked:
+    #             if not self.count == 0:
+    #                 self.hover = False
+    #                 self.clicked = False
+    #             else:
+    #                 self.count += 1
+    #     if self.clicked and isinstance(self.function, type("")):
+    #         return [True, self.function]
+    #     elif self.clicked and self.function is not None:
+    #         return [True, self.function()]
+    #     else:
+    #         return [self.clicked, None]
 
     #    def EventHandle(self,Events):
     #        if self.clicked:
@@ -110,13 +112,11 @@ class Label(Component.Component):
 
     def display(self, surface):
         if self.visible:
-            #            print ":P"
             color2 = self.colors[1]
             color = self.colors[0]
             if self.background:
 
-                rect = pygame.Rect(self.Backloc, self.backLength_Width)
-                pygame.draw.rect(surface, color, rect)
+                pygame.draw.rect(surface, color, self.rect)
 
             font = pygame.font.Font(self.font, self.height)
             if not self.hover:
