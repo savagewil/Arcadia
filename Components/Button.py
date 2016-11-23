@@ -1,5 +1,5 @@
 import pygame
-import Components
+from Components import Component
 
 """
 Button Class
@@ -10,7 +10,7 @@ This class displays and handles buttons.
 """
 
 
-class Button(Components.Component.Component):
+class Button(Component.Component):
     def __init__(self, loc, width, height, text, colors, **kwargs):
         """
 
