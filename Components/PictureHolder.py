@@ -31,6 +31,11 @@ class PictureHolder(Component.Component):
         elif self.back:
             self.border = 5
 
+        if "function" in kwargs:
+            self.function = kwargs["function"]
+        else:
+            self.function = None
+
     def display(self, screen):
 
         if self.visible:

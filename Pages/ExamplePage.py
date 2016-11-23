@@ -17,5 +17,6 @@ class ExamplePage(Page.Page):
             Components.Button.Button([240, 140], 100, 50, "Back", ["blue", "green"], function=Pages.MainPage.MainPage),
             Components.Button.Button([240, 200], 100, 50, "Exit", ["blue", "green"], function="x"),
             Components.Hyperlink.Hyperlink([460, 20], 50, "Example", ["red", "red"]),
-            Components.PictureHolder.PictureHolder([500, 500], "Images/corner.png", backgroundColor="Red")
+            Components.PictureHolder.PictureHolder([450, 100], "Images/W.png", backgroundColor="Red"),
+            Components.PictureHolder.PictureHolder([450, 350], "Images/W.png")
         ]

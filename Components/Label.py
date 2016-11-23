@@ -119,7 +119,5 @@ class Label(Component.Component):
                 pygame.draw.rect(surface, color, self.rect)
 
             font = pygame.font.Font(self.font, self.height)
-            if not self.hover:
-                font.set_underline(True)
             text = font.render(self.text, 1, color2)
             surface.blit(text, self.loc)
