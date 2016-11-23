@@ -1,7 +1,9 @@
 import Label
 import pygame
 
+
 class Hyperlink(Label.Label):
+
     def __init__(self, loc, height, text, colors, **kwargs):
         Label.Label.__init__(self, loc, height, text, colors, **kwargs)
 
