@@ -32,8 +32,16 @@ class PictureHolder(Component.Component):
             self.border = 5
 
     def display(self, screen):
-        pass
 
+        if self.visible:
+
+            if self.back:
+
+                rect = pygame.Rect([self.location[0] - self.border, self.location[1] - self.border],
+                                   [self.rect.height + 2 * self.border, self.rect.width + 2 * self.border])
+                pygame.draw.rect(screen, self.backColor, rect)
+
+            screen.blit(self.image, self.location)
 
 
 

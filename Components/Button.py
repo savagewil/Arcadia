@@ -35,6 +35,7 @@ class Button:
 
         self.hover = False
         self.clicked = False
+        self.visible = True
 
         if "function" in kwargs:
             self.function = kwargs["function"]
@@ -74,41 +75,42 @@ class Button:
     #         return [False, None]
 
     def display(self, surface):
-        color = self.colors[0]
-        color2 = self.colors[1]
-        if self.hover:
-            #print 1
-            c1 = 0
-            c2 = 0
-            c3 = 0
-            if not color[0] < 50:
-                c1 = color[0] - 50
-            elif not color[1] < 50:
-                c2 = color[1] - 50
-            elif not color[2] < 50:
-                c3 = color[2] - 50
-            color = c1, c2, c3, 255
-            c1 = 0
-            c2 = 0
-            c3 = 0
-            if not color2[0] < 50:
-                c1 = color2[0] - 50
-            elif not color2[1] < 50:
-                c2 = color2[1] - 50
-            elif not color2[2] < 50:
-                c3 = color2[2] - 50
-            color2 = c1, c2, c3, 255
-        c1 = 255
-        c2 = 255
-        c3 = 255
-        if not color[0] > 235:
-            c1 = color[0] + 20
-        elif not color[1] > 235:
-            c2 = color[1] + 20
-        elif not color[2] > 235:
-            c3 = color[2] + 20
-        color_ = c1, c2, c3, 255
-        pygame.draw.rect(surface, color, self.rect)
-        font = pygame.font.Font(self.font, self.textHeight)
-        text = font.render(self.text, 1, color2)
-        surface.blit(text, self.textLoc)
+        if self.visible:
+            color = self.colors[0]
+            color2 = self.colors[1]
+            if self.hover:
+                #print 1
+                c1 = 0
+                c2 = 0
+                c3 = 0
+                if not color[0] < 50:
+                    c1 = color[0] - 50
+                elif not color[1] < 50:
+                    c2 = color[1] - 50
+                elif not color[2] < 50:
+                    c3 = color[2] - 50
+                color = c1, c2, c3, 255
+                c1 = 0
+                c2 = 0
+                c3 = 0
+                if not color2[0] < 50:
+                    c1 = color2[0] - 50
+                elif not color2[1] < 50:
+                    c2 = color2[1] - 50
+                elif not color2[2] < 50:
+                    c3 = color2[2] - 50
+                color2 = c1, c2, c3, 255
+            c1 = 255
+            c2 = 255
+            c3 = 255
+            if not color[0] > 235:
+                c1 = color[0] + 20
+            elif not color[1] > 235:
+                c2 = color[1] + 20
+            elif not color[2] > 235:
+                c3 = color[2] + 20
+            color_ = c1, c2, c3, 255
+            pygame.draw.rect(surface, color, self.rect)
+            font = pygame.font.Font(self.font, self.textHeight)
+            text = font.render(self.text, 1, color2)
+            surface.blit(text, self.textLoc)
