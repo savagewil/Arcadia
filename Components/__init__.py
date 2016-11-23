@@ -4,4 +4,5 @@ import Hyperlink
 import Label
 import PictureHolder
 import VideoHolder
+import Component
 
