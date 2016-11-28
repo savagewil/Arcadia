@@ -13,6 +13,7 @@ class VideoHolder(Component):
         self.hover = False
         self.clicked = False
         self.visible = True
+        self.playing = False
 
         if "backgroundColor" in kwargs:
             self.backColor = pygame.Color(kwargs["backgroundColor"])
@@ -29,3 +30,16 @@ class VideoHolder(Component):
             self.function = kwargs["function"]
         else:
             self.function = None
+
+    def display(self, screen):
+
+        if self.visible:
+
+            if self.back:
+
+                rect = pygame.Rect([self.location[0] - self.border, self.location[1] - self.border],
+                                   [self.rect.height + 2 * self.border, self.rect.width + 2 * self.border])
+                pygame.draw.rect(screen, self.backColor, rect)
+
+            screen.blit(self.image, self.location)
+
