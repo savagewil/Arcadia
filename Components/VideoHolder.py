@@ -7,7 +7,7 @@ class VideoHolder(Component):
     def __init__(self, loc, videoPath,L_W, **kwargs):
 
         self.video = pygame.movie.load(videoPath)
-        self.rect = pygame.Rect(loc, self.video.get_Size())
+
         self.location = loc
 
         self.hover = False
@@ -21,6 +21,11 @@ class VideoHolder(Component):
         else:
             self.back = False
 
+        if "size" in kwargs:
+            self.size = float(kwargs["border"]) / 100.0
+        else:
+            self.size = 1
+
         if "border" in kwargs:
             self.border = kwargs["border"]
         elif self.back:
@@ -31,15 +36,32 @@ class VideoHolder(Component):
         else:
             self.function = None
 
+        self.rect = pygame.Rect(loc[0] - self.border, loc[1] - self.border,
+                                int(float(self.video.get_Size()[0]) * self.size) + self.border * 2,
+                                int(float(self.video.get_Size()[1]) * self.size) + self.border * 2)
+
+        self.movie_screen = pygame.Surface([int(float(self.video.get_Size()[0]) * self.size),
+                                            int(float(self.video.get_Size()[1]) * self.size)]).convert()
+
     def display(self, screen):
 
         if self.visible:
 
             if self.back:
+                pygame.draw.rect(screen, self.backColor, self.rect)
 
-                rect = pygame.Rect([self.location[0] - self.border, self.location[1] - self.border],
-                                   [self.rect.height + 2 * self.border, self.rect.width + 2 * self.border])
-                pygame.draw.rect(screen, self.backColor, rect)
+            screen.blit(self.movie_screen, self.location)
 
-            screen.blit(self.image, self.location)
+    def check(self, mouse):
+        Output = Component.Component.check(self, mouse)
+
+        if Output[0]:
+            if self.playing:
+                self.video.stop()
+            else:
+                self.video.play()
+
+            self.playing = not self.playing
+
+        return Output
 
