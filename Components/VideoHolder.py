@@ -2,7 +2,7 @@ import pygame
 import Component
 
 
-class VideoHolder(Component):
+class VideoHolder(Component.Component):
 
     def __init__(self, loc, videoPath,L_W, **kwargs):
 
