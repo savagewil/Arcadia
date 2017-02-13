@@ -1,12 +1,13 @@
 import pygame
 
-CHANGE = 2
+
 
 
 class Mouse():
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        self.CHANGE = 2
         self.clicked = False
 
     def display(self, Screen):
@@ -21,13 +22,13 @@ class Mouse():
         for event in events:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
-                    self.y -= CHANGE
+                    self.y -= self.CHANGE
                 elif event.key == pygame.K_DOWN:
-                    self.y += CHANGE
+                    self.y += self.CHANGE
                 elif event.key == pygame.K_LEFT:
-                    self.x -= CHANGE
+                    self.x -= self.CHANGE
                 elif event.key == pygame.K_RIGHT:
-                    self.x += CHANGE
+                    self.x += self.CHANGE
                 elif event.key == pygame.K_SPACE:
                     self.clicked = True
             elif event.type == pygame.KEYUP:

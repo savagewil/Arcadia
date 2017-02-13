@@ -18,6 +18,7 @@ Done = False
 x = 0
 count = 0
 while not Done:
+    mouse.CHANGE = Currentpage.mouseSpeed
     pygame.time.delay(1)
     events = pygame.event.get()
     for event in events:

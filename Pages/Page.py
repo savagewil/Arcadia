@@ -18,16 +18,27 @@ Check(mouse) runs the check methods of all of its components then returns the ou
 
 
 class Page:
-    def __init__(self):
-        self.components = []
-        self.backgroundColor = pygame.Color("black")
+    def __init__(self, ** kwargs):
+        if "components" in kwargs:
+            self.components = []
+        else:
+            self.components = kwargs["components"]
 
+        if "backgroundColor" in kwargs:
+            self.backgroundColor = pygame.Color("black")
+        else:
+            self.backgroundColor = pygame.Color(kwargs["backgroundColor"])
+
+        if "mouseSpeed" in kwargs:
+            self.mouseSpeed = 2
+        else:
+            self.mouseSpeed = kwargs["mouseSpeed"]
 
     # def __init__(self, components, color):
     #     self.components = components
     #     self.backgroundColor = pygame.Color(color)
-
     def check(self, mouse):
+
         output = [False, None]
         for component in self.components:
             returned = component.check(mouse)
