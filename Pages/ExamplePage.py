@@ -8,7 +8,7 @@ from Pages import Page
 class ExamplePage(Page.Page):
     def __init__(self):
         Page.Page.__init__(self)
-
+        self.mouseSpeed = 5
 
 
 
