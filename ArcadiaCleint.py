@@ -17,13 +17,25 @@ Currentpage.display(Screen)
 Done = False
 x = 0
 count = 0
+exitCode = [pygame.K_w, pygame.K_i, pygame.K_l, pygame.K_l, pygame.K_x]
+codeIndex = 0
 while not Done:
+
     mouse.CHANGE = Currentpage.mouseSpeed
     pygame.time.delay(1)
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.QUIT:
             Done = True
+        if event.type == pygame.KEYUP:
+            # print event.unicode
+            if exitCode[codeIndex] == event.key:
+                codeIndex += 1
+                if codeIndex >= len(exitCode):
+                    Done = True
+            else:
+                codeIndex = 0
+
     mouse.HandleEvents(events)
     output = Currentpage.check(mouse)
     #print output

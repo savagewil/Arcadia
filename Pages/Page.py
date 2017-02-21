@@ -30,10 +30,8 @@ class Page:
         else:
             self.backgroundColor = pygame.Color("black")
 
-
         if "mouseSpeed" in kwargs:
             self.mouseSpeed = kwargs["mouseSpeed"]
-
         else:
             self.mouseSpeed = 2
 
