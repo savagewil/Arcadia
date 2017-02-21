@@ -11,6 +11,7 @@ class Current2017Page(Page.Page):
         self.components = [
             Components.Container.Container(300, 0, 800, 300, [
 
-            ], "grey")
+            ], "grey"),
+            Components.PictureHolder.PictureHolder([50, 50], "Images/TeamCircle.jpg", scale=.1)
         ]
         self.mouseSpeed = 2

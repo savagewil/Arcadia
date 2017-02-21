@@ -19,6 +19,26 @@ class PictureHolder(Component.Component):
         self.hover = False
         self.clicked = False
         self.visible = True
+        if "scalex" in kwargs:
+            self.image = pygame.transform.scale(self.image, [kwargs["scalex"], self.rect.height])
+            self.rect = self.image.get_bounding_rect()
+
+        if "scaley" in kwargs:
+            self.image = pygame.transform.scale(self.image, [self.rect.width, kwargs["scaley"]])
+            self.rect = self.image.get_bounding_rect()
+
+        if "scalexy" in kwargs:
+            self.image = pygame.transform.scale(self.image, kwargs["scalexy"])
+            self.rect = self.image.get_bounding_rect()
+
+        if "scale" in kwargs:
+            self.image = pygame.transform.scale(self.image, [int(kwargs["scale"] * self.rect.width),
+                                                             int(kwargs["scale"] * self.rect.height)])
+            self.rect = self.image.get_bounding_rect()
+
+        if "rotate" in kwargs:
+            self.image = pygame.transform.rotate(self.image, kwargs["rotate"])
+            self.rect = self.image.get_bounding_rect()
 
         if "backgroundColor" in kwargs:
             self.backColor = pygame.Color(kwargs["backgroundColor"])
