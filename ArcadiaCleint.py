@@ -10,14 +10,14 @@ Screen = pygame.display.set_mode(Constants.SCREENSIZE, pygame.FULLSCREEN)
 pygame.key.set_repeat(30, 1)
 mouse = Mouse.Mouse(Constants.SCREENSIZE[0]/2, Constants.SCREENSIZE[1]/2)
 
-Currentpage = Pages.MainPage.MainPage()
+Currentpage = Pages.IndependentProjectsPage.IndependentProjectsPage()
 Currentpage.check(mouse)
 Currentpage.display(Screen)
 
 Done = False
 x = 0
 count = 0
-exitCode = [pygame.K_w, pygame.K_i, pygame.K_l, pygame.K_l, pygame.K_x]
+exitCode = [pygame.K_ESCAPE] #[pygame.K_w, pygame.K_i, pygame.K_l, pygame.K_l, pygame.K_x]
 codeIndex = 0
 while not Done:
 

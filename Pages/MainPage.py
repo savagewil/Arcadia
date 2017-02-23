@@ -10,12 +10,13 @@ class MainPage(Page.Page):
         Page.Page.__init__(self)
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
-            Components.Label.Label([250, 50], 100, "RED SHIFT", ["red", "black"]),
-            Components.Container.Container(300, 0, 800, 300, [
-                Components.Button.Button([750-200, 350], 200, 60, "2017 Page", ["black", "white"], textHeight=68,
+            Components.Label.Label([350, 120], 200, "RED SHIFT", ["red", "black"]),
+            Components.Container.Container(480, 0, 1280, 480, [
+                Components.Button.Button([1280-(180 + 200), 670], 180, 100, "2017", ["black", "white"], textHeight=108,
                                          function=Current2017Page.Current2017Page),
-                Components.Button.Button([750 - 200, 420], 100, 60, "Exit", ["black", "white"], textHeight=68,
-                                         function="x")
+                Components.Button.Button([200, 670], 285, 100, "History", ["black", "white"], textHeight=108,
+                                         function=Current2017Page.Current2017Page),
+
             ], "grey")
         ]
         self.mouseSpeed = 2

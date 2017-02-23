@@ -1,5 +1,5 @@
 import pygame
-import ExamplePage
+import IndependentProjectsPage
 import Components
 from Pages import Page
 
@@ -9,9 +9,31 @@ class Current2017Page(Page.Page):
         Page.Page.__init__(self)
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
-            Components.Container.Container(300, 0, 800, 300, [
+            Components.Label.Label([200, 100], 150, "2017", ["red", "black"]),
+            Components.Label.Label([100, 220], 150, "RED SHIFT", ["red", "black"]),
+            Components.PictureHolder.PictureHolder([700, 100], "Images/TeamCircle.jpg", scale=.12),
+            Components.Container.Container(480, 0, 1280, 480, [
+                Components.Button.Button([100, 550], 390, 60, "Robot Mechanics", ["black", "white"],
+                                         textHeight=68,
+                                         function=''),
 
-            ], "grey"),
-            Components.PictureHolder.PictureHolder([50, 50], "Images/TeamCircle.jpg", scale=.1)
+                Components.Button.Button([1280-(385 + 100), 550], 385, 60, "Software Design", ["black", "white"], textHeight=68,
+                                         function=''),
+
+                Components.Button.Button([100, 850], 500, 60, "Independent Projects", ["black", "white"],
+                                         textHeight=68,
+                                         function=IndependentProjectsPage.IndependentProjectsPage),
+
+                Components.Button.Button([100, 700], 185, 60, "Classes", ["black", "white"], textHeight=68,
+                                         function=''),
+
+                Components.Button.Button([1280-(375 + 100), 850], 375, 60, "Bay State Brawl", ["black", "white"],
+                                         textHeight=68,
+                                         function=''),
+
+                Components.Button.Button([1280 - (235 + 100), 700], 235, 60, "Main Page", ["black", "white"],
+                                         textHeight=68,
+                                         function=''),
+            ], "grey")
         ]
-        self.mouseSpeed = 2
+        self.mouseSpeed = 4

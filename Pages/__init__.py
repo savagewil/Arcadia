@@ -1,2 +1,4 @@
 import ExamplePage
 import MainPage
+import Current2017Page
+import IndependentProjectsPage

@@ -46,7 +46,7 @@ class Button(Component.Component):
         if "font" in kwargs:
             self.font = kwargs["font"]
         else:
-            self.font = "font\\BebasNeue Bold.otf"
+            self.font = "font/BebasNeue Bold.otf"
 
         if "textLoc" in kwargs:
             self.textLoc = kwargs["textPosition"]
