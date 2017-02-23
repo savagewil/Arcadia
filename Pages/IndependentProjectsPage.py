@@ -11,18 +11,20 @@ class IndependentProjectsPage(Page.Page):
         self.components = [
             Components.Label.Label([100, 100], 150, "Independent", ["red", "black"]),
             Components.Label.Label([190, 220], 150, "Projects", ["red", "black"]),
+
             #Components.PictureHolder.PictureHolder([700, 100], "Images/TeamCircle.jpg", scale=.12),
-            Components.Container.Container(480, 0, 1280, 480, [
-                Components.Button.Button([100, 550], 190, 60, "Arcadia", ["black", "white"],
+            Components.Container.Container(360, 0, 1280, 600, [
+                Components.Button.Button([100, 625], 190, 60, "Arcadia", ["black", "white"],
                                          textHeight=68,
                                          function=''),
 
-                Components.Button.Button([100, 700], 205, 60, "Scouting", ["black", "white"], textHeight=68,
+                Components.Button.Button([100, 775], 205, 60, "Scouting", ["black", "white"], textHeight=68,
                                          function=''),
 
-                Components.Button.Button([100, 850], 235, 60, "Main Page", ["black", "white"],
+                Components.Button.Button([100, 475], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,
-                                         function=MainPage.MainPage()),
-            ], "grey")
+                                         function=MainPage.MainPage),
+            ], "grey"),
+            Components.Label.Label([500, 500], 40, "", ["gray", "black"], file="TextDocs/IndependentProjects.txt")
         ]
         self.mouseSpeed = 4

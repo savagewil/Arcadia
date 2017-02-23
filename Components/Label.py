@@ -33,7 +33,7 @@ class Label(Component.Component):
 
         if "file" in kwargs:
             IN = open(kwargs["file"], 'r')
-            self.text = ''.join(IN.readline())
+            self.text = ''.join(IN.readlines())
 
         if "font" in kwargs:
             self.font = kwargs["font"]
@@ -78,9 +78,15 @@ class Label(Component.Component):
             color2 = self.colors[1]
             color = self.colors[0]
             if self.background:
-
                 pygame.draw.rect(surface, color, self.rect)
-
             font = pygame.font.Font(self.font, self.height)
-            text = font.render(self.text, 1, color2)
-            surface.blit(text, self.loc)
+            if not self.text.__contains__("\n"):
+                text = font.render(self.text, 1, color2)
+                surface.blit(text, self.loc)
+            else:
+                count = 0
+                texts = self.text.split("\n")
+                for text in texts:
+                    text = font.render(text, 1, color2)
+                    surface.blit(text, [self.loc[0], self.loc[1] + count * (font.get_height() + 10)])
+                    count += 1
