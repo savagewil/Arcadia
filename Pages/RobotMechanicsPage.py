@@ -1,6 +1,7 @@
 import pygame
 import Components
 import RobotFeaturesPage
+import WiringPage
 from Pages import Page
 
 
@@ -16,7 +17,7 @@ class RobotMechanicsPage(Page.Page):
                                          function=RobotFeaturesPage.RobotFeaturesPage),
 
                 Components.Button.Button([1280-(160 + 100), 650], 160, 60, "Wiring", ["black", "white"], textHeight=68,
-                                         function=''),
+                                         function=WiringPage.WiringPage),
             ], "grey"),
             Components.Label.Label([100, 550], 40, "", ["gray", "black"], file="TextDocs/RobotMechanics.txt")
         ]
