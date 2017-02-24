@@ -1,5 +1,6 @@
 import pygame
 import IndependentProjectsPage
+import RobotMechanicsPage
 import Components
 from Pages import Page
 
@@ -15,7 +16,7 @@ class Current2017Page(Page.Page):
             Components.Container.Container(480, 0, 1280, 480, [
                 Components.Button.Button([100, 550], 390, 60, "Robot Mechanics", ["black", "white"],
                                          textHeight=68,
-                                         function=''),
+                                         function=RobotMechanicsPage.RobotMechanicsPage),
 
                 Components.Button.Button([1280-(385 + 100), 550], 385, 60, "Software Design", ["black", "white"], textHeight=68,
                                          function=''),

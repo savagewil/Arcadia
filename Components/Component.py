@@ -35,6 +35,7 @@ class Component:
                 if self.function == "x" or self.function is None:
                     return [True, self.function]
                 else:
+                    print self.text
                     return [True, self.function()]
             else:
                 return [False, None]

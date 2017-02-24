@@ -2,6 +2,7 @@ import pygame
 import Components
 import MainPage
 import ArcadiaPage
+import ScoutingPage
 from Pages import Page
 
 
@@ -20,7 +21,7 @@ class IndependentProjectsPage(Page.Page):
                                          function=ArcadiaPage.ArcadiaPage),
 
                 Components.Button.Button([100, 775], 205, 60, "Scouting", ["black", "white"], textHeight=68,
-                                         function=''),
+                                         function=ScoutingPage.ScoutingPage),
 
                 Components.Button.Button([100, 475], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,

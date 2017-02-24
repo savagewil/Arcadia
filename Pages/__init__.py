@@ -3,3 +3,4 @@ import MainPage
 import Current2017Page
 import IndependentProjectsPage
 import ArcadiaPage
+import RobotMechanicsPage
