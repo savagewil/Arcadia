@@ -2,6 +2,7 @@ import pygame
 import Components
 import RobotFeaturesPage
 import WiringPage
+import Current2017Page
 from Pages import Page
 
 
@@ -12,12 +13,16 @@ class RobotMechanicsPage(Page.Page):
         self.components = [
             Components.Label.Label([100, 220], 150, "Robot Mechanics", ["red", "black"]),
             Components.Container.Container(480, 0, 1280, 480, [
-                Components.Button.Button([1280-(370 + 100), 800], 370, 60, "Robot Features", ["black", "white"],
+                Components.Button.Button([1280 -(350 + 100), 800], 350, 60, "Robot Features", ["black", "white"],
                                          textHeight=68,
                                          function=RobotFeaturesPage.RobotFeaturesPage),
 
-                Components.Button.Button([1280-(160 + 100), 650], 160, 60, "Wiring", ["black", "white"], textHeight=68,
+                Components.Button.Button([1280 -(160 + 100), 600], 160, 60, "Wiring", ["black", "white"], textHeight=68,
                                          function=WiringPage.WiringPage),
+
+                Components.Button.Button([1280 - (235 + 100), 700], 235, 60, "2017 Page", ["black", "white"],
+                                         textHeight=68,
+                                         function=Current2017Page.Current2017Page),
             ], "grey"),
             Components.Label.Label([100, 550], 40, "", ["gray", "black"], file="TextDocs/RobotMechanics.txt")
         ]

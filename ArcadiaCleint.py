@@ -10,7 +10,7 @@ Screen = pygame.display.set_mode(Constants.SCREENSIZE, pygame.FULLSCREEN)
 pygame.key.set_repeat(30, 1)
 mouse = Mouse.Mouse(Constants.SCREENSIZE[0]/2, Constants.SCREENSIZE[1]/2)
 
-Currentpage = Pages.RobotFeaturesPage.RobotFeaturesPage()
+Currentpage = Pages.MainPage.MainPage()
 Currentpage.check(mouse)
 Currentpage.display(Screen)
 
@@ -46,11 +46,12 @@ while not Done:
 
             if event.key == pygame.K_BACKSPACE:
                 Currentpage = LastPage
-
-
+                
+            elif event.key == pygame.K_7:
+                LastPage = Currentpage
+                Currentpage = Pages.Current2017Page.Current2017Page()
 
     output = Currentpage.check(mouse)
-    #print output
 
     if output[0] and Wait == 0:
         if output[1] == "x":
