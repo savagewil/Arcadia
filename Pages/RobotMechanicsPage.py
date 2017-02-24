@@ -1,5 +1,6 @@
 import pygame
 import Components
+import RobotFeaturesPage
 from Pages import Page
 
 
@@ -12,7 +13,7 @@ class RobotMechanicsPage(Page.Page):
             Components.Container.Container(480, 0, 1280, 480, [
                 Components.Button.Button([1280-(370 + 100), 800], 370, 60, "Robot Features", ["black", "white"],
                                          textHeight=68,
-                                         function=''),
+                                         function=RobotFeaturesPage.RobotFeaturesPage),
 
                 Components.Button.Button([1280-(160 + 100), 650], 160, 60, "Wiring", ["black", "white"], textHeight=68,
                                          function=''),

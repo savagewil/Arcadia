@@ -1,6 +1,7 @@
 import pygame
 import IndependentProjectsPage
 import RobotMechanicsPage
+import MainPage
 import Components
 from Pages import Page
 
@@ -18,7 +19,8 @@ class Current2017Page(Page.Page):
                                          textHeight=68,
                                          function=RobotMechanicsPage.RobotMechanicsPage),
 
-                Components.Button.Button([1280-(385 + 100), 550], 385, 60, "Software Design", ["black", "white"], textHeight=68,
+                Components.Button.Button([1280-(385 + 100), 550], 385, 60, "Software Design", ["black", "white"],
+                                         textHeight=68,
                                          function=''),
 
                 Components.Button.Button([100, 850], 500, 60, "Independent Projects", ["black", "white"],
@@ -34,7 +36,7 @@ class Current2017Page(Page.Page):
 
                 Components.Button.Button([1280 - (235 + 100), 700], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,
-                                         function=''),
+                                         function=MainPage.MainPage),
             ], "grey")
         ]
         self.mouseSpeed = 4
