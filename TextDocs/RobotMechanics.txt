@@ -1,0 +1,7 @@
+We strive to make our robot simple, durable and repairable.
+We don't want an overly complicated robot.
+It would just be extra weight
+We don't want flimsy robots.
+They just need constant repairs.
+We connect all parts to the chassis.
+It greatly simplifies repairs.

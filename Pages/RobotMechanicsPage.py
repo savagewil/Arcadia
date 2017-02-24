@@ -10,12 +10,13 @@ class RobotMechanicsPage(Page.Page):
         self.components = [
             Components.Label.Label([100, 220], 150, "Robot Mechanics", ["red", "black"]),
             Components.Container.Container(480, 0, 1280, 480, [
-                Components.Button.Button([100, 600], 370, 60, "Robot Features", ["black", "white"],
+                Components.Button.Button([1280-(370 + 100), 800], 370, 60, "Robot Features", ["black", "white"],
                                          textHeight=68,
                                          function=''),
 
-                Components.Button.Button([100, 750], 160, 60, "Wiring", ["black", "white"], textHeight=68,
+                Components.Button.Button([1280-(160 + 100), 650], 160, 60, "Wiring", ["black", "white"], textHeight=68,
                                          function=''),
-            ], "grey")
+            ], "grey"),
+            Components.Label.Label([100, 550], 40, "", ["gray", "black"], file="TextDocs/RobotMechanics.txt")
         ]
         self.mouseSpeed = 4
