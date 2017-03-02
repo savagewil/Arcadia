@@ -15,7 +15,7 @@ class RobotFeaturesPage(Page.Page):
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
             Components.Label.Label([200, 100], 150, "Robot Features", ["red", "black"]),
-            Components.Container.Container(480, 0, 1280, 480, [
+            Components.Container.Container(512, 0, 1280, 512, [
                 Components.Button.Button([100, 850], 430, 60, "Swivel Drive Train", ["black", "white"],
                                          textHeight=68,
                                          function=DriveTrainPage.DriveTrainPage),

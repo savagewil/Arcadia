@@ -15,7 +15,7 @@ class IndependentProjectsPage(Page.Page):
             Components.Label.Label([190, 220], 150, "Projects", ["red", "black"]),
 
             #Components.PictureHolder.PictureHolder([700, 100], "Images/TeamCircle.jpg", scale=.12),
-            Components.Container.Container(360, 0, 1280, 600, [
+            Components.Container.Container(512, 0, 1280, 512, [
                 Components.Button.Button([100, 625], 190, 60, "Arcadia", ["black", "white"],
                                          textHeight=68,
                                          function=ArcadiaPage.ArcadiaPage),

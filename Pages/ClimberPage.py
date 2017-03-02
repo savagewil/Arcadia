@@ -11,7 +11,7 @@ class ClimberPage(Page.Page):
         self.components = [
             Components.Label.Label([150, 50], 150, "Climber", ["red", "black"]),
 
-            Components.Container.Container(360, 0, 1280, 600, [
+            Components.Container.Container(512, 0, 1280, 512, [
                 Components.Label.Label([300, 550], 60, "The climber ratchets up a knotted rope", ["red", "black"]),
 
                 Components.Button.Button([500, 750], 235, 60, "Main Page", ["black", "white"],

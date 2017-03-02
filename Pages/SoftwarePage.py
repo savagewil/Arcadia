@@ -15,7 +15,7 @@ class SoftwarePage(Page.Page):
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
             Components.Label.Label([200, 100], 150, "Software Design", ["red", "black"]),
-            Components.Container.Container(300, 0, 1280, 660, [
+            Components.Container.Container(300, 0, 1280, 824, [
                 Components.Button.Button([100, 350], 130, 60, "Pixie", ["black", "white"], textHeight=68,
                                          function=PixiePage.PixiePage),
 
@@ -25,10 +25,10 @@ class SoftwarePage(Page.Page):
 
                 Components.Button.Button([100, 600], 315, 60, "X-Box Remote", ["black", "white"],
                                          textHeight=68,
-                                         function=HopperPage.HopperPage),
+                                         function=''),
 
                 Components.Button.Button([100, 725], 415, 60, "Autonomous Mode", ["black", "white"], textHeight=68,
-                                         function=ClimberPage.ClimberPage),
+                                         function=''),
 
                 Components.Button.Button([100, 850], 425, 60, "Swivel Drive Train", ["black", "white"],
                                          textHeight=68,

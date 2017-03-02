@@ -3,6 +3,7 @@ import IndependentProjectsPage
 import RobotMechanicsPage
 import SoftwarePage
 import MainPage
+import BayStateBrawlPage
 import Components
 from Pages import Page
 
@@ -15,7 +16,7 @@ class Current2017Page(Page.Page):
             Components.Label.Label([200, 100], 150, "2017", ["red", "black"]),
             Components.Label.Label([100, 220], 150, "RED SHIFT", ["red", "black"]),
             Components.PictureHolder.PictureHolder([700, 100], "Images/TeamCircle.jpg", scale=.12),
-            Components.Container.Container(480, 0, 1280, 480, [
+            Components.Container.Container(512, 0, 1280, 512, [
                 Components.Button.Button([100, 550], 390, 60, "Robot Mechanics", ["black", "white"],
                                          textHeight=68,
                                          function=RobotMechanicsPage.RobotMechanicsPage),
@@ -33,7 +34,7 @@ class Current2017Page(Page.Page):
 
                 Components.Button.Button([1280-(375 + 100), 850], 375, 60, "Bay State Brawl", ["black", "white"],
                                          textHeight=68,
-                                         function=''),
+                                         function=BayStateBrawlPage.BayStateBrawlPage),
 
                 Components.Button.Button([1280 - (235 + 100), 700], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,

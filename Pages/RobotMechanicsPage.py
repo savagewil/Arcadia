@@ -12,7 +12,7 @@ class RobotMechanicsPage(Page.Page):
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
             Components.Label.Label([100, 220], 150, "Robot Mechanics", ["red", "black"]),
-            Components.Container.Container(480, 0, 1280, 480, [
+            Components.Container.Container(512, 0, 1280, 512, [
                 Components.Button.Button([1280 -(350 + 100), 800], 350, 60, "Robot Features", ["black", "white"],
                                          textHeight=68,
                                          function=RobotFeaturesPage.RobotFeaturesPage),
