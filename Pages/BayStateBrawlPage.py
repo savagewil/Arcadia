@@ -20,4 +20,3 @@ class BayStateBrawlPage(Page.Page):
 
             ], "grey")
         ]
-        self.mouseSpeed = 4

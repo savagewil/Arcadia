@@ -19,4 +19,3 @@ class MainPage(Page.Page):
 
             ], "grey")
         ]
-        self.mouseSpeed = 2

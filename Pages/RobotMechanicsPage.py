@@ -26,4 +26,3 @@ class RobotMechanicsPage(Page.Page):
             ], "grey"),
             Components.Label.Label([100, 550], 40, "", ["gray", "black"], file="TextDocs/RobotMechanics.txt")
         ]
-        self.mouseSpeed = 4

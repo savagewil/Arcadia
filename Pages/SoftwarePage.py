@@ -38,4 +38,3 @@ class SoftwarePage(Page.Page):
 
             ], "grey")
         ]
-        self.mouseSpeed = 4

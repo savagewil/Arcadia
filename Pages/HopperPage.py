@@ -19,4 +19,3 @@ class HopperPage(Page.Page):
                                          function=MainPage.MainPage),
             ], "grey"),
         ]
-        self.mouseSpeed = 4

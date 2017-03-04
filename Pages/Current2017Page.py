@@ -41,4 +41,3 @@ class Current2017Page(Page.Page):
                                          function=MainPage.MainPage),
             ], "grey")
         ]
-        self.mouseSpeed = 4

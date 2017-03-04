@@ -37,4 +37,3 @@ class ClassesPage(Page.Page):
                                          textHeight=68, function=MainPage.MainPage),
             ], "grey")
         ]
-        self.mouseSpeed = 10

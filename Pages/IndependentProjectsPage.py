@@ -29,4 +29,3 @@ class IndependentProjectsPage(Page.Page):
             ], "grey"),
             Components.Label.Label([500, 500], 40, "", ["gray", "black"], file="TextDocs/IndependentProjects.txt")
         ]
-        self.mouseSpeed = 4
