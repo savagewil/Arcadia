@@ -33,7 +33,7 @@ class Page:
         if "mouseSpeed" in kwargs:
             self.mouseSpeed = kwargs["mouseSpeed"]
         else:
-            self.mouseSpeed = 2
+            self.mouseSpeed = 10
 
     # def __init__(self, components, color):
     #     self.components = components

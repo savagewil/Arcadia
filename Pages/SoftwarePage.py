@@ -1,8 +1,9 @@
 import pygame
 import CameraPage
 import DriveTrainPage
-import ClimberPage
-import HopperPage
+import AutonomousPage
+
+import RemotePage
 import PixiePage
 import MainPage
 import Components
@@ -25,10 +26,10 @@ class SoftwarePage(Page.Page):
 
                 Components.Button.Button([100, 600], 315, 60, "X-Box Remote", ["black", "white"],
                                          textHeight=68,
-                                         function=''),
+                                         function=RemotePage.RemotePage),
 
                 Components.Button.Button([100, 725], 415, 60, "Autonomous Mode", ["black", "white"], textHeight=68,
-                                         function=''),
+                                         function=AutonomousPage.AutonomousPage),
 
                 Components.Button.Button([100, 850], 425, 60, "Swivel Drive Train", ["black", "white"],
                                          textHeight=68,
