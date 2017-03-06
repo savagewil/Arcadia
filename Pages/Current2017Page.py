@@ -4,6 +4,7 @@ import RobotMechanicsPage
 import SoftwarePage
 import MainPage
 import BayStateBrawlPage
+import ClassesPage
 import Components
 from Pages import Page
 
@@ -30,7 +31,7 @@ class Current2017Page(Page.Page):
                                          function=IndependentProjectsPage.IndependentProjectsPage),
 
                 Components.Button.Button([100, 700], 185, 60, "Classes", ["black", "white"], textHeight=68,
-                                         function=''),
+                                         function=ClassesPage.ClassesPage),
 
                 Components.Button.Button([1280-(375 + 100), 850], 375, 60, "Bay State Brawl", ["black", "white"],
                                          textHeight=68,
