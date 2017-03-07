@@ -19,7 +19,7 @@ Done = False
 x = 0
 Wait = 0
 count = 0
-exitCode = [pygame.K_ESCAPE] #[pygame.K_w, pygame.K_i, pygame.K_l, pygame.K_l, pygame.K_x]
+exitCode = [273, 274, 102, 114, 122, 32, 308, 306, 50]
 codeIndex = 0
 while not Done:
 
@@ -33,10 +33,10 @@ while not Done:
 
 
     for event in events:
-        if event.type == pygame.QUIT:
-            Done = True
         if event.type == pygame.KEYUP:
             # print event.unicode
+            if event.key == pygame.K_ESCAPE:
+                Done = True
             if exitCode[codeIndex] == event.key:
                 codeIndex += 1
                 if codeIndex >= len(exitCode):

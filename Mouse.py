@@ -1,5 +1,5 @@
 import pygame
-
+import Constants
 
 
 
@@ -21,16 +21,16 @@ class Mouse():
     def HandleEvents(self, events):
         for event in events:
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP:
+                if event.key == Constants.ArcadiaBoard.RightLeverUp or event.key == Constants.ArcadiaBoard.LeftLeverUp:
                     self.y -= self.CHANGE
-                elif event.key == pygame.K_DOWN:
+                elif event.key == Constants.ArcadiaBoard.RightLeverDown or event.key == Constants.ArcadiaBoard.LeftLeverDown:
                     self.y += self.CHANGE
-                elif event.key == pygame.K_LEFT:
+                elif event.key == Constants.ArcadiaBoard.RightLeverLeft or event.key == Constants.ArcadiaBoard.LeftLeverLeft:
                     self.x -= self.CHANGE
-                elif event.key == pygame.K_RIGHT:
+                elif event.key == Constants.ArcadiaBoard.RightLeverRight or event.key == Constants.ArcadiaBoard.LeftLeverRight:
                     self.x += self.CHANGE
-                elif event.key == pygame.K_SPACE:
+                elif event.key == pygame.K_SPACE or event.key == Constants.ArcadiaBoard.LeftBlueButton or event.key == Constants.ArcadiaBoard.RightBlueButton:
                     self.clicked = True
             elif event.type == pygame.KEYUP:
-                if event.key == pygame.K_SPACE:
+                if event.key == pygame.K_SPACE or event.key == Constants.ArcadiaBoard.LeftBlueButton or event.key == Constants.ArcadiaBoard.RightBlueButton:
                     self.clicked = False

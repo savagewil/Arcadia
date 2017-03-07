@@ -87,6 +87,7 @@ class Label(Component.Component):
                 count = 0
                 texts = self.text.split("\n")
                 for text in texts:
+                    text.replace("\n", "")
                     text = font.render(text, 1, color2)
                     surface.blit(text, [self.loc[0], self.loc[1] + count * (font.get_height() + 10)])
                     count += 1
