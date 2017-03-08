@@ -11,7 +11,6 @@ pygame.key.set_repeat(30, 1)
 mouse = Mouse.Mouse(Constants.SCREENSIZE[0]/2, Constants.SCREENSIZE[1]/2)
 
 Currentpage = Pages.MainPage.MainPage()
-Currentpage.check(mouse)
 Currentpage.display(Screen)
 
 LastPage = Currentpage

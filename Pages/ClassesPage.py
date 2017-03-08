@@ -5,6 +5,7 @@ import SoftwarePage
 import MainPage
 import BayStateBrawlPage
 import Components
+import MechanicalDesignClassPage
 from Pages import Page
 
 
@@ -18,7 +19,7 @@ class ClassesPage(Page.Page):
             Components.Container.Container(512, 0, 1280, 512, [
                 Components.Button.Button([100, 550], 440, 60, "Mechanical Design", ["black", "white"],
                                          textHeight=68,
-                                         function=RobotMechanicsPage.RobotMechanicsPage),
+                                         function=MechanicalDesignClassPage.MechanicalDesignClassPage),
 
                 Components.Button.Button([1280-(230 + 100), 550], 230, 60, "Software", ["black", "white"],
                                          textHeight=68, function=SoftwarePage.SoftwarePage),

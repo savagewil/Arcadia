@@ -6,3 +6,9 @@ import ArcadiaPage
 import RobotMechanicsPage
 import RobotFeaturesPage
 import DriveTrainPage
+import CameraPage
+import DriveTrainPage
+import GearMechanismPage
+import HopperPage
+import ClimberPage
+import MechanicalDesignClassPage

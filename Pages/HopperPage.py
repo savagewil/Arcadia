@@ -11,10 +11,16 @@ class HopperPage(Page.Page):
         self.components = [
             Components.Label.Label([150, 50], 150, "Hopper", ["red", "black"]),
 
-            Components.Container.Container(512, 0, 1280, 512, [
-                Components.Label.Label([300, 550], 60, "The Hopper stores the 'fuel' balls", ["red", "black"]),
+            Components.Container.Container(312, 0, 1280, 812, [
+                Components.Label.Label([100, 350], 60, "Our hopper is where the fuel is stored. The \n "+
+                                                        "hopper can be filled from the top or from \n "+
+                                                        "the field via the intake roller. It can\n "+
+                                                        "hold up to 70 balls. A flap hinging in the \n "+
+                                                        "back top edge lifts all the balls out of the\n "+
+                                                        "hopper while a flap in the front drops down,\n "+
+                                                        "dumping all the balls into the low boiler goal.", ["red", "black"]),
 
-                Components.Button.Button([500, 750], 235, 60, "Main Page", ["black", "white"],
+                Components.Button.Button([200, 900], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,
                                          function=MainPage.MainPage),
             ], "grey"),

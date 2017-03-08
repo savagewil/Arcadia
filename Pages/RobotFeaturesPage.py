@@ -5,6 +5,7 @@ import ClimberPage
 import HopperPage
 import PixiePage
 import MainPage
+import GearMechanismPage
 import Components
 from Pages import Page
 
@@ -16,7 +17,7 @@ class RobotFeaturesPage(Page.Page):
         self.components = [
             Components.Label.Label([200, 100], 150, "Robot Features", ["red", "black"]),
             Components.Container.Container(512, 0, 1280, 512, [
-                Components.Button.Button([100, 850], 430, 60, "Swivel Drive Train", ["black", "white"],
+                Components.Button.Button([400, 850], 440, 60, "Swerve Drive Train", ["black", "white"],
                                          textHeight=68,
                                          function=DriveTrainPage.DriveTrainPage),
 
@@ -34,7 +35,11 @@ class RobotFeaturesPage(Page.Page):
                                          textHeight=68,
                                          function=CameraPage.CameraPage),
 
-                Components.Button.Button([1280 - (235 + 100), 850], 235, 60, "Main Page", ["black", "white"],
+                Components.Button.Button([460, 550], 380, 60, "Gear Mechanism", ["black", "white"],
+                                         textHeight=68,
+                                         function=GearMechanismPage.GearMechanismPage),
+
+                Components.Button.Button([510, 700], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,
                                          function=MainPage.MainPage),
             ], "grey")

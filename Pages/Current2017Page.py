@@ -15,7 +15,7 @@ class Current2017Page(Page.Page):
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
             Components.Label.Label([200, 100], 150, "2017", ["red", "black"]),
-            Components.Label.Label([100, 220], 150, "RED SHIFT", ["red", "black"]),
+            Components.Label.Label([100, 220], 150, "REDSHIFT", ["red", "black"]),
             Components.PictureHolder.PictureHolder([700, 100], "Images/TeamCircle.jpg", scale=.12),
             Components.Container.Container(512, 0, 1280, 512, [
                 Components.Button.Button([100, 550], 390, 60, "Robot Mechanics", ["black", "white"],
