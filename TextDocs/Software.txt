@@ -1,0 +1,12 @@
+Our team is multilingual.
+We have three separate programing teams for our robot.
+Java, C++, and Lab View
+
+The teams work with a shared Algorithm,
+however each team implements this in their own language.
+The different mentalities each language brings
+helps us find better solutions to programing problems.
+The separate versions of the Algorithm also allow us to
+have backups in case one of the Languages is having problems
+
+We also use Python and SQL in some of our independent Projects.

@@ -9,13 +9,14 @@ class RemotePage(Page.Page):
         Page.Page.__init__(self)
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
-            Components.Label.Label([150, 100], 150, "Controls", ["red", "black"]),
+            Components.Label.Label([400, 50], 150, "Controls", ["red", "black"]),
 
-            Components.Container.Container(512, 0, 1280, 512, [
-                Components.Label.Label([100, 550], 60, "Remote Controls", ["red", "black"]),
+            Components.Container.Container(750, 0, 1280, 512, [
+                Components.Label.Label([300, 800], 60, "These are the Operator Controls", ["red", "black"]),
 
-                Components.Button.Button([500, 750], 235, 60, "Main Page", ["black", "white"],
+                Components.Button.Button([500, 900], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,
                                          function=MainPage.MainPage),
             ], "grey"),
+            Components.PictureHolder.PictureHolder([25, 175], "Images/Robot Xbox Controller Button Map.png", scale=.7),
         ]

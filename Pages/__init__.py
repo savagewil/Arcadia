@@ -14,3 +14,5 @@ import ClimberPage
 import MechanicalDesignClassPage
 import Page
 import BayStateBrawlPage
+import RemotePage
+import SoftwarePage

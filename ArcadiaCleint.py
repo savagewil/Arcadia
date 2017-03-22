@@ -16,7 +16,7 @@ Screen = pygame.display.set_mode(Constants.SCREENSIZE, pygame.FULLSCREEN) #
 pygame.key.set_repeat(30, 1)
 mouse = Mouse.Mouse(Constants.SCREENSIZE[0]/2, Constants.SCREENSIZE[1]/2)
 
-Currentpage = Pages.MainPage.MainPage()
+Currentpage = Pages.SoftwarePage.SoftwarePage()
 Currentpage.display(Screen)
 
 LastPage = Currentpage
@@ -47,7 +47,7 @@ def terminate():
 while not Done:
     try:
         timeCount += 1
-        if timeCount > 1000:
+        if timeCount > 10000:
             timeCount = 0
             LastPage = Currentpage
             Currentpage = Pages.MainPage.MainPage()
