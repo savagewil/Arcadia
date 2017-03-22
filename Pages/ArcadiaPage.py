@@ -9,6 +9,7 @@ class ArcadiaPage(Page.Page):
         Page.Page.__init__(self)
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
+
             Components.Label.Label([370, 100], 150, "The Arcadia", ["red", "black"]),
             Components.Label.Label([470, 220], 150, "Project", ["red", "black"]),
 

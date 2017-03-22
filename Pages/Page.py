@@ -28,7 +28,7 @@ class Page:
         if "backgroundColor" in kwargs:
             self.backgroundColor = pygame.Color(kwargs["backgroundColor"])
         else:
-            self.backgroundColor = pygame.Color("black")
+            self.backgroundColor = pygame.Color("dark red")
 
         if "mouseSpeed" in kwargs:
             self.mouseSpeed = kwargs["mouseSpeed"]

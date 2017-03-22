@@ -1,6 +1,6 @@
 
 Width = 800
-# SCREENSIZE = [500, 500]
+#SCREENSIZE = [500, 500]
 SCREENSIZE = [1280, 1024]
 class ArcadiaBoard:
     LeftSquareButton = 53

@@ -26,13 +26,13 @@ class ClassesPage(Page.Page):
 
                 Components.Button.Button([100, 850], 460, 60, "Anatomy of a Robot", ["black", "white"],
                                          textHeight=68,
-                                         function=IndependentProjectsPage.IndependentProjectsPage),
+                                         function=''),
 
                 Components.Button.Button([100, 700], 480, 60, "Project Management", ["black", "white"],
                                          textHeight=68, function=''),
 
                 Components.Button.Button([1280-(210 + 100), 850], 210, 60, "First Aid", ["black", "white"],
-                                         textHeight=68, function=BayStateBrawlPage.BayStateBrawlPage),
+                                         textHeight=68, function=''),
 
                 Components.Button.Button([1280 - (235 + 100), 700], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68, function=MainPage.MainPage),

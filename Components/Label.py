@@ -39,7 +39,7 @@ class Label(Component.Component):
             self.font = kwargs["font"]
         else:
             self.font = "font/BebasNeue Bold.otf"
-
+        print self.font
         font = pygame.font.Font(self.font, self.height)
 
         w, h = font.size(self.text)
@@ -87,7 +87,9 @@ class Label(Component.Component):
                 count = 0
                 texts = self.text.split("\n")
                 for text in texts:
-                    text.replace("\n", "")
+                    
+                    if len(text) > 0 and ord(text[len(text) -1]) == 13:
+                        text = text[0:len(text) - 1]
                     text = font.render(text, 1, color2)
                     surface.blit(text, [self.loc[0], self.loc[1] + count * (font.get_height() + 10)])
                     count += 1
