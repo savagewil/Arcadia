@@ -16,7 +16,7 @@ Screen = pygame.display.set_mode(Constants.SCREENSIZE, pygame.FULLSCREEN) #
 pygame.key.set_repeat(30, 1)
 mouse = Mouse.Mouse(Constants.SCREENSIZE[0]/2, Constants.SCREENSIZE[1]/2)
 
-Currentpage = Pages.SoftwarePage.SoftwarePage()
+Currentpage = Pages.SoftwareClassPage.SoftwareClassPage()
 Currentpage.display(Screen)
 
 LastPage = Currentpage

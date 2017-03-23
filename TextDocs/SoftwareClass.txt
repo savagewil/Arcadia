@@ -1,0 +1,3 @@
+We offered introductory Java, C, and Labview classes because these are the three programming subteams.
+These classes covered basics of syntax through conditionals, loops, functions, and arrays.
+We also offered more advanced classes on how to use WPILib for embedded robot programming.

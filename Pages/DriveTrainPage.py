@@ -18,7 +18,11 @@ class DriveTrainPage(Page.Page):
                                                        "custom-built to the short robot dimensions, as \n" +
                                                        "this gives more length to our intake.", ["red", "black"]),
 
-                Components.Button.Button([100, 900], 235, 60, "Main Page", ["black", "white"],
+                Components.Button.Button([300, 900], 235, 60, "Main Page", ["black", "white"],
+                                         textHeight=68,
+                                         function=MainPage.MainPage),
+
+                Components.Button.Button([600, 900], 520, 60, "Software Information", ["black", "white"],
                                          textHeight=68,
                                          function=MainPage.MainPage),
             ], "grey"),

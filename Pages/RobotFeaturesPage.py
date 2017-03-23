@@ -28,7 +28,7 @@ class RobotFeaturesPage(Page.Page):
                 Components.Button.Button([100, 700], 185, 60, "Climber", ["black", "white"], textHeight=68,
                                          function=ClimberPage.ClimberPage),
 
-                Components.Button.Button([1280-(150 + 100), 550], 150, 60, "Pixie", ["black", "white"], textHeight=68,
+                Components.Button.Button([1280-(150 + 100), 550], 150, 60, "Pixy", ["black", "white"], textHeight=68,
                                          function=PixiePage.PixiePage),
 
                 Components.Button.Button([1280-(185 + 100), 700], 185, 60, "Camera", ["black", "white"],

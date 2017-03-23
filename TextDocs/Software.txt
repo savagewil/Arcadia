@@ -9,4 +9,5 @@ helps us find better solutions to programing problems.
 The separate versions of the Algorithm also allow us to
 have backups in case one of the Languages is having problems
 
-We also use Python and SQL in some of our independent Projects.
+We also use Python and SQL in some of our independent Projects,
+And HTTP and CSS in our team website

@@ -1,0 +1,4 @@
+New students took apart Interstellevator in this class.
+They examined the robot's hardware then put it back together.
+The reverse engineering process helped new students understand
+how different parts of the robot functioned together.
