@@ -16,8 +16,8 @@ class SoftwareClassPage(Page.Page):
                 Components.Button.Button([100, 890], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,
                                          function=MainPage.MainPage),
-                Components.Label.Label([50, 560], 60, "", ["gray", "black"], file="TextDocs/SoftwareClass.txt")
+                Components.Label.Label([50, 560], 40, "", ["gray", "black"], file="TextDocs/SoftwareClass.txt")
             ], "grey"),
 
-            Components.PictureHolder.PictureHolder([800, 200], "Images/MechanicalDesign.jpg", scale=.150, rotate= -90)
+            Components.PictureHolder.PictureHolder([800, 200], "Images/Softwareclass.jpg", scale=.150)
         ]

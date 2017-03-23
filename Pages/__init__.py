@@ -17,3 +17,4 @@ import BayStateBrawlPage
 import RemotePage
 import SoftwarePage
 import SoftwareClassPage
+import ClassesPage

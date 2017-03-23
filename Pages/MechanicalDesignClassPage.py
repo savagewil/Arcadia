@@ -9,19 +9,21 @@ class MechanicalDesignClassPage(Page.Page):
         Page.Page.__init__(self)
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
-            Components.Label.Label([150, 100], 150, "Mechanical", ["red", "black"]),
-            Components.Label.Label([100, 220], 150, "Design Class", ["red", "black"]),
+            Components.Label.Label([350, 50], 150, "Mechanical", ["red", "black"]),
+            Components.Label.Label([300, 170], 150, "Design Class", ["red", "black"]),
 
-            Components.Container.Container(512, 0, 1280, 512, [
-                Components.Label.Label([50, 560], 60, "This class is for those students who \n " +
-                                                       "want to be involved in the actual  \n " +
-                                                       "design and implementation of the \n " +
-                                                       "physical robot. It was a 2-day class", ["red", "black"]),
+            Components.Container.Container(350, 0, 1280, 900, [
+                Components.Label.Label([700, 400], 60, "This class is for those  \n " +
+                                                       "students who want to be \n" +
+                                                       "involved in the actual  \n" +
+                                                       "design and implementation \n" +
+                                                       "of the physical robot. \n" +
+                                                       "It was a 2-day class", ["red", "black"]),
 
-                Components.Button.Button([100, 890], 235, 60, "Main Page", ["black", "white"],
+                Components.Button.Button([500, 890], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,
                                          function=MainPage.MainPage),
             ], "grey"),
 
-            Components.PictureHolder.PictureHolder([800, 200], "Images/MechanicalDesign.jpg", scale=.150, rotate= -90)
+            Components.PictureHolder.PictureHolder([50, 420], "Images/MechanicalCadDesigning.jpg", scale=.150)
         ]

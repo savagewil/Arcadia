@@ -43,7 +43,14 @@ SecretCombos = [[[273, 274, 102, 114, 122, 32, 308, 306, 50], 0, Quit],
                    pygame.K_l,
                    pygame.K_i,
                    pygame.K_a,
-                   pygame.K_m], 0, runWorm],                
+                   pygame.K_m], 0, runWorm],
+
+                [[ pygame.K_s,
+                   pygame.K_a,
+                   pygame.K_v,
+                   pygame.K_a,
+                   pygame.K_g,
+                   pygame.K_e], 0, runink],
                 ]
 
 
