@@ -1,4 +1,7 @@
-The Pixy is a specialized camera that recognizes and
-tracks objects based on their color and shape.
-Our robot uses the Pixy to align with the lift
-and place the gear by tracking the retroreflective targets on it.
+The Pixy is a specialized camera
+that recognizes and tracks objects
+based on their color and shape.
+Our robot uses the Pixy to align
+with the lift and place the gear
+by tracking the retroreflective
+targets on it.

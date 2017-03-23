@@ -3,7 +3,7 @@ import CameraPage
 import DriveTrainPage
 import ClimberPage
 import HopperPage
-import PixiePage
+import PixyPage
 import MainPage
 import GearMechanismPage
 import Components
@@ -29,7 +29,7 @@ class RobotFeaturesPage(Page.Page):
                                          function=ClimberPage.ClimberPage),
 
                 Components.Button.Button([1280-(150 + 100), 550], 150, 60, "Pixy", ["black", "white"], textHeight=68,
-                                         function=PixiePage.PixiePage),
+                                         function=PixyPage.PixiePage),
 
                 Components.Button.Button([1280-(185 + 100), 700], 185, 60, "Camera", ["black", "white"],
                                          textHeight=68,

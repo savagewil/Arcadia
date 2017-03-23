@@ -16,10 +16,10 @@ Screen = pygame.display.set_mode(Constants.SCREENSIZE, pygame.FULLSCREEN) #
 pygame.key.set_repeat(30, 1)
 mouse = Mouse.Mouse(Constants.SCREENSIZE[0]/2, Constants.SCREENSIZE[1]/2)
 
-Currentpage = Pages.SoftwareClassPage.SoftwareClassPage()
+Currentpage = Pages.MainPage.MainPage()
 Currentpage.display(Screen)
 
-LastPage = Currentpage
+LastPage = [Currentpage]
 Done = False
 x = 0
 Wait = 0
@@ -49,8 +49,8 @@ while not Done:
         timeCount += 1
         if timeCount > 10000:
             timeCount = 0
-            LastPage = Currentpage
             Currentpage = Pages.MainPage.MainPage()
+            LastPage = [Currentpage]
 
         mouse.CHANGE = Currentpage.mouseSpeed
 
@@ -78,14 +78,16 @@ while not Done:
                     else:
                         Combo[1] = 0
                 if event.key == pygame.K_BACKSPACE or event.key == 50:
-                    Currentpage = LastPage
+                    if len(LastPage) - 1 >= 0:
+                        Currentpage = LastPage[len(LastPage) - 1]
+                        LastPage.__delitem__(len(LastPage) - 1)
                     
                 elif event.key == pygame.K_7 or event.key == 32:
-                    LastPage = Currentpage
+                    LastPage.append(Currentpage)
                     Currentpage = Pages.Current2017Page.Current2017Page()
 
                 elif event.key == pygame.K_m or event.key == 122:
-                    LastPage = Currentpage
+                    LastPage.append(Currentpage)
                     Currentpage = Pages.MainPage.MainPage()
                     
                 elif event.key == pygame.K_c or event.key == 49:
@@ -96,8 +98,12 @@ while not Done:
         if output[0] and Wait == 0:
             if output[1] == "x":
                 Done = True
+            elif output[1] == "b":
+                if len(LastPage) - 1 >= 0:
+                    Currentpage = LastPage[len(LastPage) - 1]
+                    LastPage.__delitem__(len(LastPage) - 1)
             elif not output[1] is None:
-                LastPage = Currentpage
+                LastPage.append(Currentpage)
                 Currentpage = output[1]
                 Wait = 50
 

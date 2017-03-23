@@ -4,7 +4,7 @@ import DriveTrainPage
 import AutonomousPage
 
 import RemotePage
-import PixiePage
+import PixyPage
 import MainPage
 import Components
 from Pages import Page
@@ -18,7 +18,7 @@ class SoftwarePage(Page.Page):
             Components.Label.Label([200, 100], 150, "Software Design", ["red", "black"]),
             Components.Container.Container(300, 0, 1280, 824, [
                 Components.Button.Button([30, 350], 130, 60, "Pixy", ["black", "white"], textHeight=68,
-                                         function=PixiePage.PixiePage),
+                                         function=PixyPage.PixiePage),
 
                 Components.Button.Button([30, 850], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,

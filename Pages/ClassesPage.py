@@ -9,6 +9,7 @@ import MechanicalDesignClassPage
 import AnatomyRobotClassPage
 import SoftwareClassPage
 import FirstAidClass
+import ProjectManagementClassPage
 from Pages import Page
 
 
@@ -32,7 +33,7 @@ class ClassesPage(Page.Page):
                                          function=AnatomyRobotClassPage.AnatomyRobotClassPage),
 
                 Components.Button.Button([100, 700], 480, 60, "Project Management", ["black", "white"],
-                                         textHeight=68, function=''),
+                                         textHeight=68, function=ProjectManagementClassPage.ProjectManagementClassPage),
 
                 Components.Button.Button([1280-(210 + 100), 850], 210, 60, "First Aid", ["black", "white"],
                                          textHeight=68, function=FirstAidClass.FirstAidClass),

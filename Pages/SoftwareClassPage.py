@@ -8,16 +8,16 @@ class SoftwareClassPage(Page.Page):
         Page.Page.__init__(self)
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
-            Components.Label.Label([150, 100], 150, "Software", ["red", "black"]),
-            Components.Label.Label([100, 220], 150, "Class", ["red", "black"]),
+            Components.Label.Label([50, 150], 150, "Software", ["red", "black"]),
+            Components.Label.Label([100, 270], 150, "Class", ["red", "black"]),
 
             Components.Container.Container(512, 0, 1280, 512, [
 
-                Components.Button.Button([100, 890], 235, 60, "Main Page", ["black", "white"],
+                Components.Button.Button([500, 890], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,
                                          function=MainPage.MainPage),
-                Components.Label.Label([50, 560], 40, "", ["gray", "black"], file="TextDocs/SoftwareClass.txt")
+                Components.Label.Label([300, 560], 40, "", ["gray", "black"], file="TextDocs/SoftwareClass.txt")
             ], "grey"),
 
-            Components.PictureHolder.PictureHolder([800, 200], "Images/Softwareclass.jpg", scale=.150)
+            Components.PictureHolder.PictureHolder([600, 150], "Images/Softwareclass.jpg", scale=.150)
         ]
