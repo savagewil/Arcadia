@@ -1,0 +1,10 @@
+This is the Arcadia Project.
+The hardware was built by
+Lou Lung, our head mentor,
+and Zach Gibson a student,
+and our current safety Officer.
+The Software was written by William
+Savage, a senior who joined us
+this year. The code for the Project
+was written in Python and can be
+found on github.

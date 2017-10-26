@@ -9,7 +9,7 @@ class SafetyPage(Page.Page):
         Page.Page.__init__(self)
         self.backgroundColor = pygame.Color("dark red")
         self.components = [
-            Components.Label.Label([200, 50], 150, "Safety 2015-and Beyond", ["red", "black"]),
+            Components.Label.Label([210, 50], 100, "Safety 2015-and Beyond", ["red", "black"]),
             Components.Container.Container(250, 0, 1280, 924, [
 
                 Components.Button.Button([1000, 475], 235, 60, "Main Page", ["black", "white"],

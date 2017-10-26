@@ -17,8 +17,8 @@ class RobotMechanicsPage(Page.Page):
                                          textHeight=68,
                                          function=RobotFeaturesPage.RobotFeaturesPage),
 
-                Components.Button.Button([1280 -(250 + 100), 600], 250, 60, "Electrical", ["black", "white"], textHeight=68,
-                                         function=WiringPage.WiringPage),
+                # Components.Button.Button([1280 -(250 + 100), 600], 250, 60, "Electrical", ["black", "white"], textHeight=68,
+                #                          function=WiringPage.WiringPage),
 
                 Components.Button.Button([1280 - (235 + 100), 700], 235, 60, "2017 Page", ["black", "white"],
                                          textHeight=68,

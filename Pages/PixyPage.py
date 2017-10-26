@@ -14,8 +14,11 @@ class PixiePage(Page.Page):
             Components.Container.Container(300, 0, 1280, 1000, [
                 Components.Label.Label([50, 350], 60, "", ["gray", "black"], file="TextDocs/PixyInformation.txt"),
 
-                Components.Button.Button([500, 750], 235, 60, "Main Page", ["black", "white"],
+                Components.Button.Button([200, 920], 235, 60, "Main Page", ["black", "white"],
                                          textHeight=68,
                                          function=MainPage.MainPage),
+                Components.Button.Button([800, 920], 120, 60, "Back", ["black", "white"],
+                                         textHeight=68,
+                                         function="b"),
             ], "grey"),
         ]

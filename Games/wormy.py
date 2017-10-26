@@ -116,10 +116,10 @@ def runGame():
                     direction = UP
                 elif (event.key == K_DOWN or event.key == K_s) and direction != UP:
                     direction = DOWN
-                elif event.key == 53:
+                elif event.key == 53 or event.key == K_END:
                     terminate()
                     
-                    
+
         if not DONE:
             # check if the worm has hit itself or the edge
             if wormCoords[HEAD]['x'] == -1 or wormCoords[HEAD]['x'] == CELLWIDTH or wormCoords[HEAD]['y'] == -1 or wormCoords[HEAD]['y'] == CELLHEIGHT:

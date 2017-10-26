@@ -75,7 +75,8 @@ class Button(Component.Component):
     #         self.clicked = False
     #         return [False, None]
 
-    def display(self, surface):
+    def display(self, surface, sizeConstant):
+
         if self.visible:
             color = self.colors[0]
             color2 = self.colors[1]
@@ -111,7 +112,13 @@ class Button(Component.Component):
             elif not color[2] > 235:
                 c3 = color[2] + 20
             color_ = c1, c2, c3, 255
-            pygame.draw.rect(surface, color, self.rect)
-            font = pygame.font.Font(self.font, self.textHeight)
+            rect = self.rect.copy()
+            rect.x = int(rect.x * sizeConstant)
+            rect.y = int(rect.y * sizeConstant)
+            rect.width = int(rect.width * sizeConstant)
+            rect.height = int(rect.height * sizeConstant)
+            pygame.draw.rect(surface, color, rect)
+            font = pygame.font.Font(self.font, int(self.textHeight * sizeConstant))
             text = font.render(self.text, 1, color2)
-            surface.blit(text, self.textLoc)
+            textLoc = [int(self.textLoc[0] * sizeConstant), int(self.textLoc[1] * sizeConstant)]
+            surface.blit(text, textLoc)

@@ -1,13 +1,13 @@
-There is be two pull-down selections on the driver station. We call them
+There are two pull-down selections on the driver station. We call them
 
 AutoMode (values 0 to 7)
 AutoPosition (0 = Left, 1 = Middle, 2 = Right)
 
-The value of Auto Position may or may not matter, depending on the value of Auto Mode.
-The list below provides a numerical value for AutoMode and the corresponding values for AutoPosition when applicable.
-
 We use the FMS to determine the side of the Field.
 We also have a Red/Blue Switch as a backup.
+
+The value of Auto Position may or may not matter, depending on the value of Auto Mode.
+The list below provides a numerical value for AutoMode and the corresponding values for AutoPosition when applicable.
 
 0. Do nothing
 1. Align with lift (this replaces cross baseline as aligning with the lifts will still cross the baseline)

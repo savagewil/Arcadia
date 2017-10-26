@@ -1,4 +1,4 @@
-import pygame
+import pygame, Constants
 """
 Component Class
 Author: William Savage
@@ -28,11 +28,12 @@ class Component:
 
     def check(self, mouse):
         x, y = mouse.x, mouse.y
-        if self.rect.left < x < self.rect.right and self.rect.top < y < self.rect.bottom:
+        if int(self.rect.left * Constants.scaleConstant)  < x < int(self.rect.right * Constants.scaleConstant) and\
+                                int(self.rect.top * Constants.scaleConstant) < y < int(self.rect.bottom * Constants.scaleConstant):
             self.hover = True
             if mouse.clicked:
                 self.clicked = True
-                if self.function == "x" or self.function is None:
+                if isinstance(self.function, basestring) or self.function is None:
                     return [True, self.function]
                 else:
                     # print self.text
@@ -44,7 +45,12 @@ class Component:
             self.clicked = False
             return [False, None]
 
-    def display(self, Screen):
+    def display(self, Screen, sizeConstants):
+        rect = self.rect.copy()
+        rect.x *= sizeConstants
+        rect.y *= sizeConstants
+        rect.width *= sizeConstants
+        rect.height *= sizeConstants
         pygame.draw.rect(Screen, self.rect, self.color)
 
     def __str__(self):

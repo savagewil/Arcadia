@@ -47,7 +47,7 @@ class Page:
                 output = returned
         return output
 
-    def display(self, screen):
+    def display(self, screen, sizeConstant):
         screen.fill(self.backgroundColor)
         for component in self.components:
-            component.display(screen)
+            component.display(screen, sizeConstant)

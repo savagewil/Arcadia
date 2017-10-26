@@ -73,23 +73,28 @@ class Label(Component.Component):
 
         self.rect = pygame.Rect(self.Backloc, self.backLength_Width)
 
-    def display(self, surface):
+    def display(self, surface, sizeConstant):
         if self.visible:
             color2 = self.colors[1]
             color = self.colors[0]
             if self.background:
-                pygame.draw.rect(surface, color, self.rect)
-            font = pygame.font.Font(self.font, self.height)
+                rect = self.rect.copy()
+                rect.x = int(rect.x * sizeConstant)
+                rect.y = int(rect.y * sizeConstant)
+                rect.width = int(rect.width * sizeConstant)
+                rect.height = int(rect.height * sizeConstant)
+                pygame.draw.rect(surface, color, rect)
+            font = pygame.font.Font(self.font,  int(self.height * sizeConstant))
             if not self.text.__contains__("\n"):
                 text = font.render(self.text, 1, color2)
-                surface.blit(text, self.loc)
+                surface.blit(text, [int(self.loc[0] * sizeConstant), int(self.loc[1] * sizeConstant)])
             else:
                 count = 0
                 texts = self.text.split("\n")
                 for text in texts:
-                    
+
                     if len(text) > 0 and ord(text[len(text) -1]) == 13:
                         text = text[0:len(text) - 1]
                     text = font.render(text, 1, color2)
-                    surface.blit(text, [self.loc[0], self.loc[1] + count * (font.get_height() + 10)])
+                    surface.blit(text, [int(self.loc[0] * sizeConstant), int(self.loc[1] * sizeConstant + count * (font.get_height() + 10))])
                     count += 1

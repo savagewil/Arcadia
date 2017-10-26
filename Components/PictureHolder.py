@@ -56,17 +56,22 @@ class PictureHolder(Component.Component):
         else:
             self.function = None
 
-    def display(self, screen):
+    def display(self, screen, sizeConstant):
 
         if self.visible:
+            surface = pygame.transform.scale(self.image,
+                                               [int(sizeConstant * self.rect.width),
+                                                int(sizeConstant * self.rect.height)])
 
             if self.back:
 
-                rect = pygame.Rect([self.location[0] - self.border, self.location[1] - self.border],
-                                   [self.rect.height + 2 * self.border, self.rect.width + 2 * self.border])
+                rect = pygame.Rect([int(self.location[0] * sizeConstant - self.border),
+                                    int(self.location[1] * sizeConstant - self.border)],
+                                   [int(self.rect.width * sizeConstant + 2 * self.border),
+                                    int(self.rect.height * sizeConstant + 2 * self.border)])
                 pygame.draw.rect(screen, self.backColor, rect)
 
-            screen.blit(self.image, self.location)
+            screen.blit(surface, [int(self.location[0] * sizeConstant), int(self.location[1] * sizeConstant)])
 
 
 

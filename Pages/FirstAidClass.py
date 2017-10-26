@@ -19,5 +19,5 @@ class FirstAidClass(Page.Page):
                 Components.Label.Label([50, 560], 40, "", ["gray", "black"], file="TextDocs/FirstAidClass.txt")
             ], "grey"),
 
-            Components.PictureHolder.PictureHolder([800, 200], "Images/FirstAidClass.jpg", scale=.150)
+            Components.PictureHolder.PictureHolder([300, 200], "Images/FirstAidClass.jpg", scale=.150)
         ]

@@ -17,7 +17,12 @@ class Container(Component.Component):
                 test = output
         return test
 
-    def display(self, screen):
-        pygame.draw.rect(screen, self.color, self.rect)
+    def display(self, screen,sizeConstant):
+        rect = self.rect.copy()
+        rect.x = int(rect.x * sizeConstant)
+        rect.y = int(rect.y * sizeConstant)
+        rect.width = int(rect.width * sizeConstant)
+        rect.height = int(rect.height * sizeConstant)
+        pygame.draw.rect(screen, self.color, rect)
         for Component in self.conponents:
-            Component.display(screen)
+            Component.display(screen, sizeConstant)

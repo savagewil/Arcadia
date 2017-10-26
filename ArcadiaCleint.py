@@ -14,10 +14,11 @@ pygame.init()
 Screen = pygame.display.set_mode(Constants.SCREENSIZE, pygame.FULLSCREEN) #
 
 pygame.key.set_repeat(30, 1)
-mouse = Mouse.Mouse(Constants.SCREENSIZE[0]/2, Constants.SCREENSIZE[1]/2)
+mouse = Mouse.Mouse(int(Constants.SCREENSIZE[0] * Constants.scaleConstant/2),
+                    int(Constants.SCREENSIZE[1] * Constants.scaleConstant/2))
 
 Currentpage = Pages.MainPage.MainPage()
-Currentpage.display(Screen)
+Currentpage.display(Screen, Constants.scaleConstant)
 
 LastPage = [Currentpage]
 Done = False
@@ -102,7 +103,7 @@ while not Done:
                 if len(LastPage) - 1 >= 0:
                     Currentpage = LastPage[len(LastPage) - 1]
                     LastPage.__delitem__(len(LastPage) - 1)
-            elif not output[1] is None:
+            elif not output[1] is None and not isinstance(output[1], basestring):
                 LastPage.append(Currentpage)
                 Currentpage = output[1]
                 Wait = 50
@@ -111,7 +112,7 @@ while not Done:
             Wait -= 1
 
         if count % 2 == 0:
-            Currentpage.display(Screen)
+            Currentpage.display(Screen, Constants.scaleConstant)
         mouse.display(Screen)
         pygame.display.flip()
         count += 1
@@ -125,9 +126,9 @@ while not Done:
         mouse = Mouse.Mouse(Constants.SCREENSIZE[0]/2, Constants.SCREENSIZE[1]/2)
 
         Currentpage = Pages.MainPage.MainPage()
-        Currentpage.display(Screen)
+        Currentpage.display(Screen, Constants.scaleConstant)
 
-        LastPage = Currentpage
+        LastPage = [Currentpage]
         Done = False
         x = 0
         Wait = 0
